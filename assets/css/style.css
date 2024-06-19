@@ -1,0 +1,18 @@
+body {
+    margin: 10px;
+    padding: 5px;
+}
+
+header div {
+    padding: 10px;
+}
+
+main {
+    min-height: 600px;
+}
+
+main div {
+    margin: 5px 0;
+    border: 2px solid aqua;
+    padding: 10px 0;
+}
