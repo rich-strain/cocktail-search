@@ -7,63 +7,57 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
 
-    <header>
-        <!-- <div class="container"> -->
-            <div class="row teal lighten-1">
-                <div class="col">
-                    <h3>
-                        DrinkMix!
-                    </h3>
-                </div>
-                <div class="col valign-wrapper">
-                    <button class="btn-large teal darken-3" id="btnModal">Get a drink!</a>
-                </div>
-                <div class="col s1 offset-l11 valign-wrapper">
-                    <button class="btn-large teal darken-3" id="btnLightDark">🌞</button>
-                </div>
-            </div>
-        <!-- </div> -->
+    <header class="valign-wrapper cyan darken-4">
+        <h3>MixIt!</h3>
+        <button class="btn-large cyan darken-2 z-depth-2" id="btnModal">Get a Drink!</button>
+        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">Night</button>
     </header>
 
-    <main class="">
-        <!-- <div class="container"> -->
-            <!-- This is the header for the main insert -->
-            <div class="row teal lighten-1">
-                <div class="col s12 center-align">
-                    <h5>body header</h6>
-                </div>
+    <main>
+        <div class="row center-align cyan darken-4">
+            <div class="col s12" id="cardDrinkName">
+              <h4>drink name titlebar</h4>
             </div>
-            <div class="row">
-                <div class="col s3">
-                    <div class="row">
-
-                    </div>
-                    <div class="row">
-
+        </div>
+        <div class="row">
+            <div class="col s6 m4">
+                <div class="row center-align">
+                    <div class="col" id="cardImg">
+                        image
                     </div>
                 </div>
-                <div class="col s3">
-
-                </div>
-                <div class="col s6">
-
+                <div class="row" id="cardInstructions">
+                    instructions
                 </div>
             </div>
-        <!-- </div> -->
+            <div class="col s6 m4" id="cardIngredients">
+                ingredients
+            </div>
+            <div class="col s12 m4" id="cardGoogleMapsApi">
+                GoogleMaps API
+            </div>
+        </div>
     </main>
 
     <footer>
-        <!-- <div class="container"> -->
-            <div class="row">
-                <div class="col s12 teal darken-1 center-align">
-                    This is a footer lol
-                </div>
+        <div class="row cyan darken-4">
+            <div class="col s12">
+                footer
             </div>
-        <!-- </div> -->
+        </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>
 </body>
 </html>
