@@ -1,4 +1,50 @@
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css">
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>gi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrinkMix!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <header class="valign-wrapper cyan darken-4">
+        <h3>MixIt!</h3>
+        <button class="btn-large cyan darken-2 z-depth-2" id="btnModal">Get a Drink!</button>
+        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">Night</button>
+    </header>
+
+    <main>
+        <div class="row center-align cyan darken-4">
+            <div class="col s12" id="cardDrinkName">
+              <h5>drink name titlebar</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 m4">
+                <div class="row" id="cardImg">
+                    image
+                </div>
+                <div class="row" id="cardInstructions">
+                    instructions
+                </div>
+            </div>
+            <div class="col s6 m4" id="cardIngredients">
+                ingredients
+            </div>
+            <div class="col s12 m4" id="cardGoogleMapsApi">
+                GoogleMaps API
+            </div>
+        </div>
+    </main>
+
+    <footer class="row cyan darken-4">
+        <div>
+            footer
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>
+</body>
+</html>

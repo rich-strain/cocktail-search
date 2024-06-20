@@ -1,4 +1,51 @@
-/* Search Cocktail Modal */
+
+body {
+    margin: 5px;
+    /* border: 2px solid darkblue; */
+    border-radius: 5px;
+}
+
+header {
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+
+header h3 {
+    padding: 0 20px;
+}
+
+header button {
+    margin: 10px;
+}
+
+#btnTheme {
+    position: fixed;
+    right: 10px;
+}
+
+main {
+    margin: 5px 0;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+
+main div {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid rgb(32, 167, 88);
+    border-radius: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    margin-right: 5px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    text-align: right;
+}
+
+
 #cocktailForm {
   display: flex;
   flex-direction: column;
@@ -10,3 +57,4 @@
 #modal1 {
   max-width: 400px;
 }
+
