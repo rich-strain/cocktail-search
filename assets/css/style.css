@@ -38,6 +38,7 @@ main div {
 footer {
     position: fixed;
     bottom: 0;
+    left: 5;
     margin-right: 5px;
     border: 2px solid blue;
     border-radius: 5px;
