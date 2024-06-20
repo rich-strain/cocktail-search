@@ -1,3 +1,4 @@
+
 body {
     margin: 5px;
     /* border: 2px solid darkblue; */
@@ -43,3 +44,17 @@ footer {
     border-radius: 5px;
     text-align: right;
 }
+
+/* Cocktail Modal */
+#cocktailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#modal1 h5 {
+  text-align: center;
+}
+#modal1 {
+  max-width: 400px;
+}
+
