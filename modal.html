@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Modal Example</title>
+    <script>
+      const theme = localStorage.getItem('theme');
+      console.log(`Page Loaded - Current Theme Is: ${theme}`);
+      if (theme) document.documentElement.setAttribute('theme', theme);
+    </script>
   </head>
   <body>
+    <header>
+      <nav id="nav">
+        <div class="nav-wrapper container">
+          <a>Get A Drink!</a>
+            <ul class="right">
+              <li>
+              <a><i id="theme-switch" class="material-icons left"></i> Toggle Dark Mode</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
     <div class="container">
 
       <!-- Modal Trigger By data-target rather than an href -->
@@ -53,6 +70,7 @@
         });
       });
     </script>
+     <script src="./assets/js/light-dark.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
