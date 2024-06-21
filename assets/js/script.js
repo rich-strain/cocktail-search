@@ -39,14 +39,13 @@ const fetchCocktailByName = async (cocktailName) => {
   const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`;
   try {
     const data = await fetch(url);
-    // determine if data contains a cocktail
-    // need help from TA to determine if object is empty as it currently
-    // breaks when no cocktail is found
+    // add decisioning to determine if data contains a cocktail, if true, return the data
+    //console.log('Data:', data);
+
     if (data) {
-      //console.log('Cocktail Found', data);
       return data.json();
     } else {
-      console.log('No cocktail found');
+      console.log('No Data Returned');
       return null;
     }
   } catch (error) {
@@ -94,7 +93,12 @@ const handleSearchByName = async (event) => {
 
   fetchCocktailByName(cocktailName).then((data) => {
     // Returned cocktail data
-    displayCocktail(data);
+    if (Array.isArray(data.drinks)) {
+      displayCocktail(data);
+    } else {
+      console.log('No Cocktail Found');
+      // add an alert to index.html to notify the user that no cocktail results were found
+    }
   });
 };
 
