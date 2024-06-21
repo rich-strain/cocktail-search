@@ -41,15 +41,16 @@
       
       <!-- Modal Structure -->
       <div id="modal1" class="modal">
+        <div class="modal-dialog">
         <div class="modal-content">
             <h5 class="text-center">Pick Your Poison</h5>
             <form id="cocktailForm" method="POST">
-              <div class="input-field">
-                <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
-                <label for="cocktailName">Cocktail Name</label>
-              </div>
-              <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
-            </form>
+                <div class="input-field">
+                  <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
+                  <label for="cocktailInput">Cocktail Name</label>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
+              </form>
         </div>
         <div class="modal-footer">
             
@@ -57,7 +58,7 @@
                to close the modal after the form is submitted -->
           <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
         </div>
-      </div>
+      </div></div>
 
 
     <!-- jQuery and JS For Materialize -->
@@ -65,7 +66,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
 
     <!-- Initializes modal as soon as DOM is loaded  -->
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {
@@ -78,7 +79,7 @@
           M.Modal.getInstance(document.querySelector('#modal1')).close();
         });
       });
-    </script>
+    </script> -->
      <script src="./assets/js/light-dark.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
