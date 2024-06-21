@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Modal Example</title>
+
+    <!-- This will need to be moved over to index.html -->
     <script>
       const theme = localStorage.getItem('theme');
       console.log(`Page Loaded - Current Theme Is: ${theme}`);
@@ -21,7 +23,7 @@
           <a>Get A Drink!</a>
             <ul class="right">
               <li>
-              <a><i id="theme-switch" class="material-icons left"></i> Toggle Dark Mode</a>
+              <a><i id="theme-switch" class="material-icons left">dark_mode</i> Toggle Dark Mode</a>
               </li>
             </ul>
         </div>
@@ -39,9 +41,9 @@
       <div id="modal1" class="modal">
         <div class="modal-content">
             <h5 class="text-center">Pick Your Poison</h5>
-            <form id="cocktailForm">
+            <form id="cocktailForm" method="POST">
               <div class="input-field">
-                <input id="cocktailName" type="text" class="validate" />
+                <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
                 <label for="cocktailName">Cocktail Name</label>
               </div>
               <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
@@ -58,7 +60,7 @@
 
     <!-- jQuery and JS For Materialize -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
 
     <!-- Initializes modal as soon as DOM is loaded  -->
     <script>
@@ -67,6 +69,11 @@
         var instances = M.Modal.init(elems, {
           // specify options here 
           //options can be found in the Materialize CSS docs here https://materializeweb.com/modals.html
+        });
+        // close modal after form is submitted
+        $('#cocktailForm').submit(function (e) {
+          e.preventDefault();
+          M.Modal.getInstance(document.querySelector('#modal1')).close();
         });
       });
     </script>
