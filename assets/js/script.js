@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 $(document).ready(function (event) {
   console.log('Document Ready');
-  // detect form submission, id below will depend on the form id in the modal
+
+  // detect form submission
   $('#searchCocktail').on('click', handleSearchByName);
 });
