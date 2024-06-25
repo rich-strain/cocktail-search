@@ -60,6 +60,13 @@
         </div>
       </div></div>
 
+      <!-- html input for map. -->
+      <h2>Find Local Liquor Stores</h2>
+      <input type="text" id="zipCodeInput" placeholder="Enter your zip code">
+      <button class="waves-effect waves-light btn" onclick="searchLocation()">Search</button>
+      
+      <div id="map"></div>
+
 
     <!-- jQuery and JS For Materialize -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -82,5 +89,11 @@
     </script> -->
      <script src="./assets/js/light-dark.js"></script>
     <script src="./assets/js/script.js"></script>
+    
+    <!-- Asynchronously load Google Maps API with key and libraries -->
+     <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ash3Z-sXJ0ghwEjyDK7fafIwoLoJDDE&libraries=places&callback=initMap">
+ </script>
+
   </body>
 </html>
