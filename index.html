@@ -1,119 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrinkMix!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-
+  </head>
+  <body>
     <header class="valign-wrapper cyan darken-4">
-        <h3>M<img src="assets/images/mixicon.png" height="30px"/>xIt!</h3>
-        <button class="btn-large cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
-        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">
-            <a href="#" id="theme-switch">
-                <i class="material-icons center">dark_mode</i>
-            </a>
-        </button>
+      <h3>M<img src="assets/images/mixicon.png" height="30px" />xIt!</h3>
+      <button class="btn-large cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
+      <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">
+        <a href="#" id="theme-switch">
+          <i class="material-icons center">dark_mode</i>
+        </a>
+      </button>
     </header>
 
-<!-- modal starts here -->
+    <!-- modal starts here -->
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <h5 class="text-center">Pick Your Poison</h5>
-                <form id="cocktailForm" method="POST">
-                    <div class="input-field">
-                    <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
-                    <label for="cocktailInput">Cocktail Name</label>
-                    </div>
-                    <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
-                </form>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <h5 class="text-center">Pick Your Poison</h5>
+          <form id="cocktailForm" method="POST">
+            <div class="input-field">
+              <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
+              <label for="cocktailInput">Cocktail Name</label>
             </div>
-            <div class="modal-footer">
-                
-            <!-- anchor tag will close modal but we will also have code in script.js to close the modal after the form is submitted -->
-            <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
-            </div>
+            <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
+          </form>
         </div>
+        <div class="modal-footer">
+          <!-- anchor tag will close modal but we will also have code in script.js to close the modal after the form is submitted -->
+          <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
+        </div>
+      </div>
     </div>
 
-<!-- moddal ends here -->
+    <!-- moddal ends here -->
 
-<!-- main info card begins here -->
+    <!-- main info card begins here -->
 
     <main>
-        <!-- drink name -->
-        <div class="row center-align cyan darken-4">
-            <div class="col s12" id="cardDrinkName">
-              <h5>drink name titlebar</h4>
-            </div>
+      <!-- drink name -->
+      <div class="row center-align cyan darken-4">
+        <div class="col s12" id="cardDrinkName">
+          <h4>drink name titlebar</h4>
         </div>
-        <div class="row">
-            <!-- column populates with two rows: preview image with instructions underneath -->
-            <div class="col s6 m4">
-                <div class="row" id="cardImg">
-                    image
-                </div>
-                <div class="row" id="cardInstructions">
-                    instructions
-                </div>
+      </div>
+      <div class="row">
+        <!-- column populates with two rows: preview image with instructions underneath -->
+        <div class="col s6 m4">
+          <div class="row" id="cardImg">
+            <div class="col s12">
+              <img src="./assets/images/istockphoto-1160619894-612x612.jpg" alt="drink preview" class="responsive-img circle" id="drinkImg" />
             </div>
-            <!-- this column populates with a list of ingredients -->
-            <div class="col s6 m4" id="cardIngredients">
-                ingredients
+          </div>
+          <div class="row" id="cardInstructions">
+            <div class="col s12">
+              <p class="flow-text" id="drinkInstructions">Default Instructions Go Here?</p>
             </div>
-            <!-- finally, here is where the GoogleMaps API loads in; on smaller screens, it goes into a new row underneath the above two columns -->
-            <div class="col s12 m4" id="cardGoogleMapsApi">
-                GoogleMaps API
-            </div>
+          </div>
         </div>
+        <!-- this column populates with a list of ingredients -->
+        <div class="col s6 m4" id="cardIngredients">
+          <ul class="flow-text" id="drinkIngredients">
+            <li class="">1 1/2oz Tequila</li>
+            <li class="">1oz Triple Sec</li>
+            <li class="">Squeeze of Lime</li>
+            <li class="">Rock Salt</li>
+          </ul>
+        </div>
+        <!-- finally, here is where the GoogleMaps API loads in; on smaller screens, it goes into a new row underneath the above two columns -->
+        <div class="col s12 m4" id="cardGoogleMapsApi">GoogleMaps API</div>
+      </div>
     </main>
 
-<!-- main info card ends here -->
+    <!-- main info card ends here -->
 
-<!-- footer begins here -->
+    <!-- footer begins here -->
 
     <footer>
-        <!-- NOTE: Not exactly sure what we're actually putting down here lol -->
-        <div class="row cyan darken-4">
-            <div class="col">
-                footer
-            </div>
-        </div>
+      <!-- NOTE: Not exactly sure what we're actually putting down here lol -->
+      <div class="row cyan darken-4">
+        <div class="col s 12"></div>
+      </div>
     </footer>
 
-<!-- footer ends here -->
+    <!-- footer ends here -->
 
-<!-- scripts begin loading here -->
-    <script 
-        src="https://code.jquery.com/jquery-3.7.0.js">
-    </script>
+    <!-- scripts begin loading here -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
 
-    <script
-        src="./assets/js/script.js">
-    </script>
+    <script src="./assets/js/script.js"></script>
 
     <script src="./assets/js/light-dark.js"></script>
 
     <script>
-        const theme = localStorage.getItem('theme');
-        console.log(`Page Loaded - Current Theme Is: ${theme}`);
-        if (theme) document.documentElement.setAttribute('theme', theme);
+      const theme = localStorage.getItem('theme');
+      console.log(`Page Loaded - Current Theme Is: ${theme}`);
+      if (theme) document.documentElement.setAttribute('theme', theme);
     </script>
 
-     
-<!-- script loading ends here -->
 
-</body>
 </html>

@@ -54,33 +54,43 @@ const fetchCocktailByName = async (cocktailName) => {
   }
 };
 
+// Generate Dynamic HTML For Cocktail
 const displayCocktail = (data) => {
   // Console Log the data to see what the individual elements are
   const cocktail = data.drinks[0];
   console.log('Returned Cocktail Name:', cocktail.strDrink);
   console.log('Returned Cocktail Instructions:', cocktail.strInstructions);
   console.log('Returned Cocktail Image:', cocktail.strDrinkThumb);
-  console.log('Returned Cocktail Image 2:', cocktail.strImageSource);
+
+  // Clear Previsous Ingredient List
+  $('#drinkIngredients').empty();
 
   // Dynamically Update Drink Name
-  //$('#nameOfElementID').html(cocktail.strDrink);
+  $('#cardDrinkName').html(cocktail.strDrink);
 
   // Dynamically Update Drink Instructions
-  //$('#nameOfElementID').html(cocktail.strInstructions);
+  $('#drinkInstructions').html(cocktail.strInstructions);
 
   // Dynamically Update Drink Image
-  //$('#nameOfElementID').html(cocktail.strDrinkThumb);
+  $('#drinkImg').attr('src', cocktail.strDrinkThumb);
 
-  // Dynamically Update Drink Name 2
-  //$('#nameOfElementID').html(cocktail.strImageSource);
-
-  // Dnyamically Update Ingredients Example
-  if (cocktail.strIngredient1) {
-    console.log('Ingredient 1:', cocktail.strMeasure1 + cocktail.strIngredient1);
-    //$('#nameOfElementID').html(cocktail.strMeasure1 + cocktail.strIngredient1);
+  // Dnyamically Update Ingredients
+  for (let i = 1; i <= 15; i++) {
+    const ingredient = cocktail[`strIngredient${i}`];
+    const measure = cocktail[`strMeasure${i}`];
+    if (measure === null) {
+      const newMeasure = '';
+    } else {
+      const newMeasure = measure;
+    }
+    if (ingredient) {
+      console.log('Ingredient:', measure + ingredient);
+      $('#drinkIngredients').append(`<li>${measure} ${ingredient}</li>`);
+    }
   }
 };
 
+// Process Coctail Search Form
 const handleSearchByName = async (event) => {
   event.preventDefault();
   const cocktailName = $('#cocktailInput').val();
@@ -98,6 +108,7 @@ const handleSearchByName = async (event) => {
     return null;
   }
 
+  // call async fetchCocktailByName function and pass in the cocktail name
   fetchCocktailByName(cocktailName).then((data) => {
     // Returned cocktail data
     if (Array.isArray(data.drinks)) {
@@ -107,6 +118,18 @@ const handleSearchByName = async (event) => {
       // add an alert to index.html to notify the user that no cocktail results were found
     }
   });
+};
+
+// Fetch Random Cocktail
+const randomCocktail = async () => {
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
+  try {
+    const data = await fetch(url);
+    return data.json();
+  } catch (error) {
+    console.error('Fetch error:', error);
+    return null;
+  }
 };
 
 $(document).ready(function (event) {
@@ -119,7 +142,10 @@ $(document).ready(function (event) {
     dismissible: true,
   });
 
-  console.log('Document Ready');
+  // Load Page With Random Cocktail
+  randomCocktail().then((data) => {
+    displayCocktail(data);
+  });
 
   // detect form submission
   $('#searchCocktail').on('click', handleSearchByName);

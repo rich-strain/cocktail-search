@@ -1,63 +1,70 @@
 .row {
-    padding: 5px;
-    gap: 0;
+  padding: 5px;
+  gap: 0;
 }
 
 .col {
-    margin: 5px;
-    padding: 5px;
+  margin: 5px;
+  padding: 5px;
 }
 
 body {
-    margin: 5px;
-    /* border: 2px solid darkblue; */
-    border-radius: 5px;
+  margin: 5px;
+  /* border: 2px solid darkblue; */
+  border-radius: 5px;
 }
 
 header {
-    /* border: 2px solid blue; */
-    border-radius: 5px;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 header h3 {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 #btnTheme {
-    position: fixed;
-    right: 20px;
+  position: fixed;
+  right: 20px;
 }
 
 main {
-    margin: 5px 0;
-    /* border: 2px solid blue; */
-    border-radius: 5px;
+  margin: 5px 0;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 main div {
-    border: 2px solid rgb(32, 167, 88);
-    border-radius: 5px;
+  border: 2px solid rgb(32, 167, 88);
+  border-radius: 5px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 2.5%;
-    width: 95%;
-    /* border: 2px solid blue; */
-    border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 2.5%;
+  width: 95%;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 footer div {
-    padding: 10px;
-    /* border: 2px solid green; */
-    justify-content: right;
+  padding: 10px;
+  /* border: 2px solid green; */
+  justify-content: right;
 }
 
 footer .row {
-    margin: 0;
+  margin: 0;
 }
 
+/* Dark Mode Styles */
+:root[theme='dark'] {
+  /* set color of icon */
+  #theme-switch {
+    color: gold;
+  }
+}
 
 /* modal stuff down here, no touchy cass */
 #cocktailForm {
@@ -70,14 +77,5 @@ footer .row {
 }
 #modal1 {
   max-width: 400px;
-}
-
-/* style for map. */
-#map {
-    height: 400px;
-    width: 50%;
-}
-#zipCodeInput {
-    width: 50%;
 }
 
