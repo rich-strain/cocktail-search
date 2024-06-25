@@ -1,37 +1,3 @@
-// function for closing the modal
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems, {
-    opacity: 0.5,
-    inDuration: 300,
-    outDuration: 200,
-    dismissible: true
-  });
-
-  const modal = document.getElementById('modal1');
-  if (modal) {
-    const submitButton = document.getElementById('searchCocktail');
-    if (submitButton) {
-      submitButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-
-        modal.style.display = 'none'; // Hide the modal by changing the display style
-
-        const overlay = document.querySelector('.modal-overlay');
-        if (overlay) {
-          overlay.style.display = 'none';
-        }
-
-        document.body.classList.remove('modal-open');
-      });
-    } else {
-      console.error('Submit button not found');
-    }
-  } else {
-    console.error('Modal element not found');
-  }
-
-});
 // 2nd API Provider - OpenStreetMap, Google Maps or Youtube
 const placeHolderAPI = async () => {
   const url = `https://placeholder.com/api`;
@@ -135,9 +101,42 @@ const handleSearchByName = async (event) => {
     }
   });
 };
+// function for closing the modal
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {
+    opacity: 0.5,
+    inDuration: 300,
+    outDuration: 200,
+    dismissible: true,
+  });
 
+  const modal = document.getElementById('modal1');
+  if (modal) {
+    const submitButton = document.getElementById('searchCocktail');
+    if (submitButton) {
+      submitButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        modal.style.display = 'none'; // Hide the modal by changing the display style
+
+        const overlay = document.querySelector('.modal-overlay');
+        if (overlay) {
+          overlay.style.display = 'none';
+        }
+
+        document.body.classList.remove('modal-open');
+      });
+    } else {
+      console.error('Submit button not found');
+    }
+  } else {
+    console.error('Modal element not found');
+  }
+});
 $(document).ready(function (event) {
   console.log('Document Ready');
-  // detect form submission, id below will depend on the form id in the modal
+
+  // detect form submission
   $('#searchCocktail').on('click', handleSearchByName);
 });
