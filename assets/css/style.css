@@ -1,3 +1,12 @@
+.row {
+    padding: 5px;
+    gap: 0;
+}
+
+.col {
+    margin: 5px;
+    padding: 5px;
+}
 
 body {
     margin: 5px;
@@ -6,7 +15,7 @@ body {
 }
 
 header {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     border-radius: 5px;
 }
 
@@ -14,24 +23,18 @@ header h3 {
     padding: 0 20px;
 }
 
-header button {
-    margin: 10px;
-}
-
 #btnTheme {
     position: fixed;
-    right: 10px;
+    right: 20px;
 }
 
 main {
     margin: 5px 0;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     border-radius: 5px;
 }
 
 main div {
-    margin: 5px;
-    padding: 5px;
     border: 2px solid rgb(32, 167, 88);
     border-radius: 5px;
 }
@@ -39,13 +42,24 @@ main div {
 footer {
     position: fixed;
     bottom: 0;
-    margin-right: 5px;
-    border: 2px solid blue;
+    left: 2.5%;
+    width: 95%;
+    /* border: 2px solid blue; */
     border-radius: 5px;
-    text-align: right;
+}
+
+footer div {
+    padding: 10px;
+    /* border: 2px solid green; */
+    justify-content: right;
+}
+
+footer .row {
+    margin: 0;
 }
 
 
+/* modal stuff down here, no touchy cass */
 #cocktailForm {
   display: flex;
   flex-direction: column;
