@@ -88,7 +88,8 @@ const handleSearchByName = async (event) => {
   // we have the cocktail name, now we can close the modal
   // create modalInstance variable to close the modal
   const modalInstance = M.Modal.getInstance(document.getElementById('modal1'));
-  // close the modal
+  // close the modal and clear the drink name input field
+  $('#cocktailInput').val('');
   modalInstance.close();
 
   if (!cocktailName) {
