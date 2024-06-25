@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrinkMix!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
 
     <header class="valign-wrapper cyan darken-4">
         <h3>M<img src="assets/images/mixicon.png" height="30px"/>xIt!</h3>
         <button class="btn-large cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
-        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">Dark Mode</button>
+        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">
+            <a href="#" id="theme-switch">
+                <i class="material-icons center">dark_mode</i>
+            </a>
+        </button>
     </header>
 
 <!-- modal starts here -->
@@ -97,6 +103,8 @@
     <script
         src="./assets/js/script.js">
     </script>
+
+    <script src="./assets/js/light-dark.js"></script>
 
     <script>
         const theme = localStorage.getItem('theme');
