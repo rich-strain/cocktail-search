@@ -1,37 +1,3 @@
-// function for closing the modal
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems, {
-    opacity: 0.5,
-    inDuration: 300,
-    outDuration: 200,
-    dismissible: true
-  });
-
-  const modal = document.getElementById('modal1');
-  if (modal) {
-    const submitButton = document.getElementById('searchCocktail');
-    if (submitButton) {
-      submitButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-
-        modal.style.display = 'none'; // Hide the modal by changing the display style
-
-        const overlay = document.querySelector('.modal-overlay');
-        if (overlay) {
-          overlay.style.display = 'none';
-        }
-
-        document.body.classList.remove('modal-open');
-      });
-    } else {
-      console.error('Submit button not found');
-    }
-  } else {
-    console.error('Modal element not found');
-  }
-
-});
 // 2nd API Provider - OpenStreetMap, Google Maps or Youtube
 const placeHolderAPI = async () => {
   const url = `https://placeholder.com/api`;
@@ -119,6 +85,12 @@ const handleSearchByName = async (event) => {
   event.preventDefault();
   const cocktailName = $('#cocktailInput').val();
 
+  // we have the cocktail name, now we can close the modal
+  // create modalInstance variable to close the modal
+  const modalInstance = M.Modal.getInstance(document.getElementById('modal1'));
+  // close the modal
+  modalInstance.close();
+
   if (!cocktailName) {
     console.error('No cocktail name provided');
     // add an alert to modal to notify the user that cocktail name is required
@@ -137,6 +109,15 @@ const handleSearchByName = async (event) => {
 };
 
 $(document).ready(function (event) {
+  // Initialize Modal
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {
+    opacity: 0.5,
+    inDuration: 300,
+    outDuration: 200,
+    dismissible: true,
+  });
+
   console.log('Document Ready');
   // detect form submission, id below will depend on the form id in the modal
   $('#searchCocktail').on('click', handleSearchByName);
