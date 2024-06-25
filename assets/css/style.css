@@ -79,3 +79,11 @@ footer .row {
   max-width: 400px;
 }
 
+/* style for map. */
+#map {
+    height: 400px;
+    width: 50%;
+}
+#zipCodeInput {
+    width: 50%;
+}
