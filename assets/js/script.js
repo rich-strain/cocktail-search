@@ -85,6 +85,12 @@ const handleSearchByName = async (event) => {
   event.preventDefault();
   const cocktailName = $('#cocktailInput').val();
 
+  // we have the cocktail name, now we can close the modal
+  // create modalInstance variable to close the modal
+  const modalInstance = M.Modal.getInstance(document.getElementById('modal1'));
+  // close the modal
+  modalInstance.close();
+
   if (!cocktailName) {
     console.error('No cocktail name provided');
     // add an alert to modal to notify the user that cocktail name is required
@@ -135,6 +141,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 $(document).ready(function (event) {
+  // Initialize Modal
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, {
+    opacity: 0.5,
+    inDuration: 300,
+    outDuration: 200,
+    dismissible: true,
+  });
+
   console.log('Document Ready');
 
   // detect form submission
