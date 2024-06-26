@@ -1,3 +1,16 @@
+:root {
+  --blueGrayDark4: #263238;
+  --blueGrayDark3: #37474f;
+  --blueGrayDark2: #455a64;
+  --blueGrayDark1: #546e7a;
+  --blueGray: #607d8b;
+  --blueGrayLight1: #78909c;
+  --blueGrayLight2: #90a4ae;
+  --blueGrayLight3: #b0bec5;
+  --blueGrayLight4: #cfd8dc;
+  --blueGrayLight5: #eceff1;
+}
+
 .row {
   padding: 5px;
   gap: 0;
@@ -82,10 +95,25 @@ footer .row {
   margin-left: 10px;
 }
 .card.small {
+  background-color: var(--blueGrayLight3);
   height: 475px;
   width: 400px;
 }
 .flow-text {
   font-weight: bold;
   margin: 10px;
+}
+
+/* --blueGrayLight3: #b0bec5;
+  --blueGrayLight4: #cfd8dc; */
+#header {
+  background-color: var(--blueGrayLight3);
+}
+
+#drinkNameContainer {
+  background-color: var(--blueGrayLight4);
+}
+
+.btn {
+  background-color: var(--blueGrayLight5);
 }
