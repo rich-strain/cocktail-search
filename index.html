@@ -77,10 +77,17 @@
           </ul>
         </div>
         <!-- finally, here is where the GoogleMaps API loads in; on smaller screens, it goes into a new row underneath the above two columns -->
-        <div class="col s12 m4" id="cardGoogleMapsApi">GoogleMaps API</div>
-      </div>
-    </main>
+         <!-- html input for map. -->
+    
+<div class="card small">
+    <p class="flow-text">Find Local Liquor Stores</p>
+    <input type="text" id="zipCodeInput" placeholder="Enter your zip code">
+    <button class="waves-effect waves-light btn" onclick="searchLocation()">Search</button>
+    
+    <div id="map"></div>
 
+  </div>
+</main>
     <!-- main info card ends here -->
 
     <!-- scripts begin loading here -->
@@ -88,6 +95,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/light-dark.js"></script>
+<!-- Asynchronously load Google Maps API with key and libraries -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ash3Z-sXJ0ghwEjyDK7fafIwoLoJDDE&libraries=places&callback=initMap">
+    </script>
 
     <script>
       const theme = localStorage.getItem('theme');
