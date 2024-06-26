@@ -35,7 +35,7 @@ main {
 }
 
 main div {
-  border: 2px solid rgb(32, 167, 88);
+  /* border: 2px solid rgb(32, 167, 88); */
   border-radius: 5px;
 }
 
@@ -58,14 +58,6 @@ footer .row {
   margin: 0;
 }
 
-/* Dark Mode Styles */
-:root[theme='dark'] {
-  /* set color of icon */
-  #theme-switch {
-    color: gold;
-  }
-}
-
 /* modal stuff down here, no touchy cass */
 #cocktailForm {
   display: flex;
@@ -81,9 +73,67 @@ footer .row {
 
 /* style for map. */
 #map {
-    height: 400px;
-    width: 50%;
+  height: 400px;
+  width: 50%;
 }
 #zipCodeInput {
-    width: 50%;
+  width: 50%;
+}
+
+/* Dark Mode */
+:root[theme='dark'] {
+  --darkBlue: #1b262c;
+  --medBlue: #0f4c75;
+  --blue: #3282b8;
+  --lightBlue: #bbe1fa;
+  --sand: #f9f7f0;
+  --lightGray: #bebebe;
+
+  --blueGrayDark4: #263238;
+  --blueGrayDark3: #37474f;
+  --blueGrayDark2: #455a64;
+  --blueGrayDark1: #546e7a;
+  --blueGray: #607d8b;
+  --blueGrayLight1: #78909c;
+  --blueGrayLight2: #90a4ae;
+  --blueGrayLight3: #b0bec5;
+  --blueGrayLight4: #cfd8dc;
+  --blueGrayLight5: #eceff1;
+
+  /* HTML Elements */
+  body {
+    background-color: var(--blueGrayDark4);
+    color: var(--blueGrayLight5);
+  }
+
+  input {
+    color: var(--blueGrayLight5);
+  }
+
+  label {
+    color: var(--blueGrayLight4);
+  }
+
+  #theme-switch {
+    color: gold;
+  }
+
+  /* Element Classes */
+  .btn {
+    background-color: #607d8b;
+  }
+
+  /* Element ID's */
+  #drinkNameContainer {
+    background-color: var(--blueGrayDark1);
+  }
+
+  #drinkImg {
+    border-radius: 10px;
+  }
+
+  #header {
+    background-color: var(--blueGrayDark3);
+    border-color: var(--darkBlue);
+  }
 }
