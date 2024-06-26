@@ -1,4 +1,5 @@
 .row {
+  margin: 5px 0;
   padding: 5px;
   gap: 0;
 }
@@ -37,25 +38,6 @@ main {
 main div {
   border: 2px solid rgb(32, 167, 88);
   border-radius: 5px;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 2.5%;
-  width: 95%;
-  /* border: 2px solid blue; */
-  border-radius: 5px;
-}
-
-footer div {
-  padding: 10px;
-  /* border: 2px solid green; */
-  justify-content: right;
-}
-
-footer .row {
-  margin: 0;
 }
 
 /* Dark Mode Styles */

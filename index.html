@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+
+<!-- header section; logo, navbar, light/dark theme button -->
+
     <header class="valign-wrapper cyan darken-4">
       <h3>M<img src="assets/images/mixicon.png" height="30px" />xIt!</h3>
-      <button class="btn-large cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
-      <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">
+      <button class="btn cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
+      <button class="btn-floating cyan darken-2 z-depth-2" id="btnTheme">
         <a href="#" id="theme-switch">
           <i class="material-icons center">dark_mode</i>
         </a>
       </button>
     </header>
 
-    <!-- modal starts here -->
+<!-- end header section -->
+
+<!-- modal starts here -->
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -42,9 +47,9 @@
       </div>
     </div>
 
-    <!-- moddal ends here -->
+<!-- modal ends here -->
 
-    <!-- main info card begins here -->
+<!-- main info card begins here -->
 
     <main>
       <!-- drink name -->
@@ -81,20 +86,9 @@
       </div>
     </main>
 
-    <!-- main info card ends here -->
+<!-- main info card ends here -->
 
-    <!-- footer begins here -->
-
-    <footer>
-      <!-- NOTE: Not exactly sure what we're actually putting down here lol -->
-      <div class="row cyan darken-4">
-        <div class="col s 12"></div>
-      </div>
-    </footer>
-
-    <!-- footer ends here -->
-
-    <!-- scripts begin loading here -->
+<!-- scripts begin loading here -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
@@ -108,6 +102,8 @@
       console.log(`Page Loaded - Current Theme Is: ${theme}`);
       if (theme) document.documentElement.setAttribute('theme', theme);
     </script>
+
+<!-- end of scripts -->
 
     </body>
 </html>
