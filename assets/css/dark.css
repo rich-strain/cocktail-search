@@ -41,6 +41,12 @@
     background-color: #607d8b;
   }
 
+  .card.small {
+    background-color: var(--blueGrayDark3);
+    height: 475px;
+    width: 400px;
+  }
+
   /* Element ID's */
   #drinkNameContainer {
     background-color: var(--blueGrayDark1);
