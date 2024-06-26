@@ -81,9 +81,19 @@ footer .row {
 
 /* style for map. */
 #map {
-    height: 400px;
-    width: 50%;
+    height: 350px;
+    width: 100%;
+    margin-top: 20px;
 }
 #zipCodeInput {
     width: 50%;
+    margin-left: 10px;
+}
+.card.small {
+    height: 475px;
+    width: 400px;
+}
+.flow-text {
+    font-weight:bold;
+    margin: 10px;
 }
