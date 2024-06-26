@@ -35,7 +35,7 @@ main {
 }
 
 main div {
-  border: 2px solid rgb(32, 167, 88);
+  /* border: 2px solid rgb(32, 167, 88); */
   border-radius: 5px;
 }
 
@@ -58,14 +58,6 @@ footer .row {
   margin: 0;
 }
 
-/* Dark Mode Styles */
-:root[theme='dark'] {
-  /* set color of icon */
-  #theme-switch {
-    color: gold;
-  }
-}
-
 /* modal stuff down here, no touchy cass */
 #cocktailForm {
   display: flex;
@@ -81,19 +73,19 @@ footer .row {
 
 /* style for map. */
 #map {
-    height: 350px;
-    width: 100%;
-    margin-top: 20px;
+  height: 350px;
+  width: 100%;
+  margin-top: 20px;
 }
 #zipCodeInput {
-    width: 50%;
-    margin-left: 10px;
+  width: 50%;
+  margin-left: 10px;
 }
 .card.small {
-    height: 475px;
-    width: 400px;
+  height: 475px;
+  width: 400px;
 }
 .flow-text {
-    font-weight:bold;
-    margin: 10px;
+  font-weight: bold;
+  margin: 10px;
 }

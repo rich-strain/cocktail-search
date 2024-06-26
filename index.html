@@ -6,14 +6,15 @@
     <title>DrinkMix!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
+    
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/dark.css" />
   </head>
   <body>
-    <header class="valign-wrapper cyan darken-4">
+    <header class="valign-wrapper" id="header">
       <h3>M<img src="assets/images/mixicon.png" height="30px" />xIt!</h3>
-      <button class="btn-large cyan darken-2 z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
-      <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">
+      <button class="btn z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
+      <button class="btn z-depth-2" id="btnTheme">
         <a href="#" id="theme-switch">
           <i class="material-icons center">dark_mode</i>
         </a>
@@ -48,7 +49,7 @@
 
     <main>
       <!-- drink name -->
-      <div class="row center-align cyan darken-4">
+      <div class="row center-align" id="drinkNameContainer">
         <div class="col s12" id="cardDrinkName">
           <h4>drink name titlebar</h4>
         </div>
@@ -58,7 +59,7 @@
         <div class="col s6 m4">
           <div class="row" id="cardImg">
             <div class="col s12">
-              <img src="./assets/images/istockphoto-1160619894-612x612.jpg" alt="drink preview" class="responsive-img circle" id="drinkImg" />
+              <img src="./assets/images/istockphoto-1160619894-612x612.jpg" alt="drink preview" class="responsive-img" id="drinkImg" />
             </div>
           </div>
           <div class="row" id="cardInstructions">
@@ -90,24 +91,10 @@
 </main>
     <!-- main info card ends here -->
 
-    <!-- footer begins here -->
-
-    <footer>
-      <!-- NOTE: Not exactly sure what we're actually putting down here lol -->
-      <div class="row cyan darken-4">
-        <div class="col s 12"></div>
-      </div>
-    </footer>
-
-    <!-- footer ends here -->
-
     <!-- scripts begin loading here -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
-
     <script src="./assets/js/script.js"></script>
-
     <script src="./assets/js/light-dark.js"></script>
 <!-- Asynchronously load Google Maps API with key and libraries -->
     <script async defer
@@ -119,6 +106,5 @@
       console.log(`Page Loaded - Current Theme Is: ${theme}`);
       if (theme) document.documentElement.setAttribute('theme', theme);
     </script>
-
-    </body>
+  </body>
 </html>
