@@ -66,7 +66,7 @@ const displayCocktail = (data) => {
   $('#drinkIngredients').empty();
 
   // Dynamically Update Drink Name
-  $('#cardDrinkName').html(cocktail.strDrink);
+  $('#cardDrinkName').html(`<h4>${cocktail.strDrink}</h4>`);
 
   // Dynamically Update Drink Instructions
   $('#drinkInstructions').html(cocktail.strInstructions);
