@@ -1,14 +1,3 @@
-// 2nd API Provider - OpenStreetMap, Google Maps or Youtube
-const placeHolderAPI = async () => {
-  const url = `https://placeholder.com/api`;
-  try {
-    const data = await fetch(url);
-    return data.json();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    return null;
-  }
-};
 
 // Fetch Cocktail By Ingredient
 const fetchCocktailByIngredient = async (ingredient) => {
@@ -157,7 +146,7 @@ $(document).ready(function (event) {
  var infowindow;
 
  function initMap() {
-     // Default center (New York, USA)
+     // Default map location (UCF)
      var center = { lat: 28.6024, lng: -81.2001 };
 
      // Initialize map
