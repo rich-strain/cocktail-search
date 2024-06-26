@@ -135,8 +135,16 @@ $(document).ready(function (event) {
 
   // detect form submission
   $('#searchCocktail').on('click', handleSearchByName);
-});
 
+
+  const randomButton = document.getElementById('randomButton');
+
+  randomButton.addEventListener('click', () => {
+    randomCocktail().then((data) => {
+      displayCocktail(data);
+    });
+  });
+});
 // Initialize variables
 var map;
 var service;
