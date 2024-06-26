@@ -1,4 +1,3 @@
-
 // Fetch Cocktail By Ingredient
 const fetchCocktailByIngredient = async (ingredient) => {
   // add a check to see if the ingredient is empty
@@ -68,9 +67,7 @@ const displayCocktail = (data) => {
     const ingredient = cocktail[`strIngredient${i}`];
     const measure = cocktail[`strMeasure${i}`];
     if (measure === null) {
-      const newMeasure = '';
-    } else {
-      const newMeasure = measure;
+      measure = '';
     }
     if (ingredient) {
       console.log('Ingredient:', measure + ingredient);
@@ -140,67 +137,67 @@ $(document).ready(function (event) {
   $('#searchCocktail').on('click', handleSearchByName);
 });
 
- // Initialize variables
- var map;
- var service;
- var infowindow;
+// Initialize variables
+var map;
+var service;
+var infowindow;
 
- function initMap() {
-     // Default map location (UCF)
-     var center = { lat: 28.6024, lng: -81.2001 };
+function initMap() {
+  // Default map location (UCF)
+  var center = { lat: 28.6024, lng: -81.2001 };
 
-     // Initialize map
-     map = new google.maps.Map(document.getElementById('map'), {
-         center: center,
-         zoom: 12
-     });
+  // Initialize map
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: center,
+    zoom: 12,
+  });
 
-     // Initialize Places service and infowindow
-     service = new google.maps.places.PlacesService(map);
-     infowindow = new google.maps.InfoWindow();
- }
+  // Initialize Places service and infowindow
+  service = new google.maps.places.PlacesService(map);
+  infowindow = new google.maps.InfoWindow();
+}
 
 //  function to find liquor stores by zip code.
- function searchLocation() {
-     var zipCode = document.getElementById('zipCodeInput').value.trim();
+function searchLocation() {
+  var zipCode = document.getElementById('zipCodeInput').value.trim();
 
-     // Use Geocoding to get coordinates for the zip code
-     var geocoder = new google.maps.Geocoder();
-     geocoder.geocode({ address: zipCode }, function(results, status) {
-         if (status === 'OK') {
-             var location = results[0].geometry.location;
-             map.setCenter(location);
+  // Use Geocoding to get coordinates for the zip code
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: zipCode }, function (results, status) {
+    if (status === 'OK') {
+      var location = results[0].geometry.location;
+      map.setCenter(location);
 
-             // Search for liquor stores near the coordinates
-             var request = {
-                 location: location,
-                 radius: 10000, // 10 kilometers
-                 type: 'liquor_store'
-             };
-// create marker for liquor stores.
-             service.nearbySearch(request, function(results, status) {
-                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                     for (var i = 0; i < results.length; i++) {
-                         createMarker(results[i]);
-                     }
-                 } else {
-                     alert('No liquor stores found nearby.');
-                 }
-             });
-         } else {
-             alert('Geocode was not successful for the following reason: ' + status);
-         }
-     });
- }
+      // Search for liquor stores near the coordinates
+      var request = {
+        location: location,
+        radius: 10000, // 10 kilometers
+        type: 'liquor_store',
+      };
+      // create marker for liquor stores.
+      service.nearbySearch(request, function (results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        } else {
+          alert('No liquor stores found nearby.');
+        }
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
 
- function createMarker(place) {
-     var marker = new google.maps.Marker({
-         map: map,
-         position: place.geometry.location
-     });
+function createMarker(place) {
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+  });
 
-     google.maps.event.addListener(marker, 'click', function() {
-         infowindow.setContent('<strong>' + place.name + '</strong><br>' + place.vicinity);
-         infowindow.open(map, this);
-     });
- }
+  google.maps.event.addListener(marker, 'click', function () {
+    infowindow.setContent('<strong>' + place.name + '</strong><br>' + place.vicinity);
+    infowindow.open(map, this);
+  });
+}
