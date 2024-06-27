@@ -1,5 +1,21 @@
+/* declaring variables and universals */
+
+:root {
+    --colorBackground: rgb(26, 30, 30);
+    --colorCardBackground: rgb(33, 44, 44);
+    --colorAccent: rgb(10, 80, 80);
+    --colorButton: rgb(12, 120, 120);
+
+    background-color: var(--colorBackground);
+}
+
+button {
+    background-color: var(--colorButton);
+}
+
+/* this section deals with the style for the header */
+
 header {
-    display: flex;
     margin: 5px;
     border-radius: 5px;
 }
@@ -11,18 +27,22 @@ header h3 {
 #btnTheme {
     position: absolute;
     right: 20px;
+    background-color: var(--colorButton);
 }
+
+/* gap override for Materialize, otherwise the style breaks on narrower display widths for some reason */
 
 .row {
     gap: 0;
 }
 
+/* this section deals with the style for the main card of the page */
 
 .cardHeader {
     margin: 0 2.5px;
     padding: 5px;
     border-radius: 10px 10px 0 0;
-    background-color: rgb(10, 80, 80);
+    background-color: var(--colorAccent);
     text-align: center;
     font-size: 18px;
 }
@@ -31,20 +51,21 @@ header h3 {
     margin: 2.5px;
     margin-top: 0;
     padding: 5px;
-    border: 2px solid rgb(10, 80, 80);
+    border: 2px solid var(--colorAccent);
     border-radius: 0 0 10px 10px;
+    background-color: var(--colorCardBackground);
 }
 
 #cardBody {
     margin: 5px;
-    border: 2px solid rgb(10, 80, 80);
+    border: 2px solid var(--colorAccent);
     border-radius: 10px;
 }
 
 #cardDrinkName {
     margin-bottom: 5px;
     padding: 5px;
-    background-color: rgb(10, 80, 80);
+    background-color: var(--colorAccent);
     border-radius: 5px 5px 0 0;
     text-align: center;
     font-size: 30px;
@@ -55,7 +76,7 @@ header h3 {
 }
 
 #cardDrinkImg img {
-    border: 2px solid rgb(10, 80, 80);
+    border: 2px solid var(--colorAccent);
     border-radius: 20px;
 }
 
