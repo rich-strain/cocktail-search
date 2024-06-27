@@ -40,11 +40,11 @@ header h3 {
 
 .cardHeader {
     margin: 0 2.5px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px 10px 0 0;
     background-color: var(--colorAccent);
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .cardContent {
