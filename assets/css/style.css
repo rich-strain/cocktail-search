@@ -1,56 +1,77 @@
+:root {
+  --blueGrayDark4: #263238;
+  --blueGrayDark3: #37474f;
+  --blueGrayDark2: #455a64;
+  --blueGrayDark1: #546e7a;
+  --blueGray: #607d8b;
+  --blueGrayLight1: #78909c;
+  --blueGrayLight2: #90a4ae;
+  --blueGrayLight3: #b0bec5;
+  --blueGrayLight4: #cfd8dc;
+  --blueGrayLight5: #eceff1;
+}
+
+.row {
+  padding: 5px;
+  gap: 0;
+}
+
+.col {
+  margin: 5px;
+  padding: 5px;
+}
 
 body {
-    margin: 5px;
-    /* border: 2px solid darkblue; */
-    border-radius: 5px;
+  margin: 5px;
+  /* border: 2px solid darkblue; */
+  border-radius: 5px;
 }
 
 header {
-    border: 2px solid blue;
-    border-radius: 5px;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 header h3 {
-    padding: 0 20px;
-}
-
-header button {
-    margin: 10px;
+  padding: 0 20px;
 }
 
 #btnTheme {
-    position: fixed;
-    right: 10px;
+  position: fixed;
+  right: 20px;
 }
 
 main {
-    margin: 5px 0;
-    border: 2px solid blue;
-    border-radius: 5px;
+  margin: 5px 0;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 main div {
-    margin: 5px;
-    padding: 5px;
-    border: 2px solid rgb(32, 167, 88);
-    border-radius: 5px;
+  /* border: 2px solid rgb(32, 167, 88); */
+  border-radius: 5px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    margin-right: 5px;
-    border: 2px solid blue;
-    border-radius: 5px;
-    text-align: right;
+  position: fixed;
+  bottom: 0;
+  left: 2.5%;
+  width: 95%;
+  /* border: 2px solid blue; */
+  border-radius: 5px;
 }
 
 footer div {
-    padding: 10px;
-    text-align: right;
+  padding: 10px;
+  /* border: 2px solid green; */
+  justify-content: right;
 }
 
+footer .row {
+  margin: 0;
+}
 
+/* modal stuff down here, no touchy cass */
 #cocktailForm {
   display: flex;
   flex-direction: column;
@@ -63,3 +84,36 @@ footer div {
   max-width: 400px;
 }
 
+/* style for map. */
+#map {
+  height: 350px;
+  width: 100%;
+  margin-top: 20px;
+}
+#zipCodeInput {
+  width: 50%;
+  margin-left: 10px;
+}
+.card.small {
+  background-color: var(--blueGrayLight3);
+  height: 475px;
+  width: 400px;
+}
+.flow-text {
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* --blueGrayLight3: #b0bec5;
+  --blueGrayLight4: #cfd8dc; */
+#header {
+  background-color: var(--blueGrayLight3);
+}
+
+#drinkNameContainer {
+  background-color: var(--blueGrayLight4);
+}
+
+.btn {
+  background-color: var(--blueGrayLight5);
+}

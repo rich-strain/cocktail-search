@@ -1,54 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrinkMix!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-
-    <header class="valign-wrapper cyan darken-4">
-        <h3>MixIt!</h3>
-        <button class="btn-large cyan darken-2 z-depth-2" id="btnModal">Get a Drink!</button>
-        <button class="btn-large cyan darken-2 z-depth-2" id="btnTheme">Night</button>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/dark.css" />
+  </head>
+  <body>
+    <header class="valign-wrapper" id="header">
+      <h3>M<img src="assets/images/mixicon.png" height="30px" />xIt!</h3>
+      <button class="btn z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
+      <button class="btn z-depth-2 " id="randomButton" >Random Drink</button>
+      <button class="btn z-depth-2" id="btnTheme">
+        <a href="#" id="theme-switch">
+          <i class="material-icons center">dark_mode</i>
+        </a>
+      </button>
     </header>
 
-    <main>
-        <div class="row center-align cyan darken-4">
-            <div class="col s12" id="cardDrinkName">
-              <h5>drink name titlebar</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6 m4">
-                <div class="row" id="cardImg">
-                    image
-                </div>
-                <div class="row" id="cardInstructions">
-                    instructions
-                </div>
-            </div>
-            <div class="col s6 m4" id="cardIngredients">
-                ingredients
-            </div>
-            <div class="col s12 m4" id="cardGoogleMapsApi">
-                GoogleMaps API
-            </div>
-        </div>
-    </main>
+    <!-- modal starts here -->
 
+<<<<<<< HEAD
     <footer class="cyan darken-4">
         <div class="container">
             <div class="col-12">
                 footer
             </div>
+=======
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <h5 class="text-center">Pick Your Poison</h5>
+          <form id="cocktailForm" method="POST">
+            <div class="input-field">
+              <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
+              <label for="cocktailInput">Cocktail Name</label>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
+          </form>
+>>>>>>> ec811b0d7ca1fab875bc8921664865712f931c07
         </div>
-    </footer>
-    <!-- Scripts -->
+        <div class="modal-footer">
+          <!-- anchor tag will close modal but we will also have code in script.js to close the modal after the form is submitted -->
+          <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- moddal ends here -->
+
+    <!-- main info card begins here -->
+
+    <main>
+      <!-- drink name -->
+      <div class="row center-align" id="drinkNameContainer">
+        <div class="col s12" id="cardDrinkName">
+          <h4>drink name titlebar</h4>
+        </div>
+      </div>
+      <div class="row">
+        <!-- column populates with two rows: preview image with instructions underneath -->
+        <div class="col s6 m4">
+          <div class="row" id="cardImg">
+            <div class="col s12">
+              <img src="./assets/images/istockphoto-1160619894-612x612.jpg" alt="drink preview" class="responsive-img" id="drinkImg" />
+            </div>
+          </div>
+          <div class="row" id="cardInstructions">
+            <div class="col s12">
+              <p class="flow-text" id="drinkInstructions">Default Instructions Go Here?</p>
+            </div>
+          </div>
+        </div>
+        <!-- this column populates with a list of ingredients -->
+        <div class="col s6 m4" id="cardIngredients">
+          <ul class="flow-text" id="drinkIngredients">
+            <li class="">1 1/2oz Tequila</li>
+            <li class="">1oz Triple Sec</li>
+            <li class="">Squeeze of Lime</li>
+            <li class="">Rock Salt</li>
+          </ul>
+        </div>
+        <!-- finally, here is where the GoogleMaps API loads in; on smaller screens, it goes into a new row underneath the above two columns -->
+         <!-- html input for map. -->
+    
+        <div class="card small m4">
+            <p class="flow-text">Find Local Liquor Stores</p>
+            <input type="text" id="zipCodeInput" placeholder="Enter your zip code">
+            <button class="waves-effect waves-light btn" onclick="searchLocation()">Search</button>
+            
+            <div id="map"></div>
+
+        </div>
+</main>
+    <!-- main info card ends here -->
+
+    <!-- scripts begin loading here -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+    <script src="./assets/js/light-dark.js"></script>
+<!-- Asynchronously load Google Maps API with key and libraries -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ash3Z-sXJ0ghwEjyDK7fafIwoLoJDDE&libraries=places&callback=initMap">
+    </script>
+
+    <script>
+      const theme = localStorage.getItem('theme');
+      console.log(`Page Loaded - Current Theme Is: ${theme}`);
+      if (theme) document.documentElement.setAttribute('theme', theme);
+    </script>
+  </body>
 </html>
