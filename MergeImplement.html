@@ -108,7 +108,14 @@
             <!-- finally, this third column just holds the GoogleMaps API; it's formatted to go alongside the other two columns on larger displays, but shift underneath them in smaller formats such as mobile and smaller tablets -->
             <div class="col s12 m5 center-align" id="cardGoogleMapsApi">
                 GoogleMaps API
+                <div class="card small m4">
+                    <p class="flow-text">Find Local Liquor Stores</p>
+                    <input type="text" id="zipCodeInput" placeholder="Enter your zip code">
+                    <button class="waves-effect waves-light btn" onclick="searchLocation()">Search</button>
+                    <div id="map"></div>
+                </div>
             </div>
+
         </div>
 
     </main>

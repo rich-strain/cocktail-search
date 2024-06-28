@@ -1,77 +1,101 @@
+/* declaring variables and universals */
+
 :root {
-  --blueGrayDark4: #263238;
-  --blueGrayDark3: #37474f;
-  --blueGrayDark2: #455a64;
-  --blueGrayDark1: #546e7a;
-  --blueGray: #607d8b;
-  --blueGrayLight1: #78909c;
-  --blueGrayLight2: #90a4ae;
-  --blueGrayLight3: #b0bec5;
-  --blueGrayLight4: #cfd8dc;
-  --blueGrayLight5: #eceff1;
-}
-
-.row {
-  padding: 5px;
-  gap: 0;
-}
-
-.col {
-  margin: 5px;
-  padding: 5px;
+  --colorBackground: rgb(241, 225, 231);
+  --colorText: rgb(33, 44, 44);
+  --colorCardBackground: rgb(248, 212, 226);
+  --colorAccent: rgb(236, 56, 122);
+  --colorButton: rgb(255, 89, 150);
 }
 
 body {
-  margin: 5px;
-  /* border: 2px solid darkblue; */
-  border-radius: 5px;
+  color: var(--colorText);
+  background-color: var(--colorBackground);
 }
 
+button {
+  background-color: var(--colorButton);
+}
+
+/* this section deals with the style for the header */
+
 header {
-  /* border: 2px solid blue; */
+  margin: 5px;
   border-radius: 5px;
 }
 
 header h3 {
-  padding: 0 20px;
+  padding: 0 10px;
+}
+
+#btnRandom {
+  left: 10px;
+  background-color: var(--colorButton);
 }
 
 #btnTheme {
-  position: fixed;
+  position: absolute;
   right: 20px;
+  background-color: var(--colorButton);
 }
 
-main {
-  margin: 5px 0;
-  /* border: 2px solid blue; */
-  border-radius: 5px;
+/* gap override for Materialize, otherwise the style breaks on narrower display widths for some reason */
+
+.row {
+  gap: 0;
 }
 
-main div {
-  /* border: 2px solid rgb(32, 167, 88); */
-  border-radius: 5px;
-}
+/* this section deals with the style for the main card of the page */
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 2.5%;
-  width: 95%;
-  /* border: 2px solid blue; */
-  border-radius: 5px;
-}
-
-footer div {
+.cardHeader {
+  margin: 0 2.5px;
   padding: 10px;
-  /* border: 2px solid green; */
-  justify-content: right;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--colorAccent);
+  text-align: center;
+  font-size: 24px;
 }
 
-footer .row {
-  margin: 0;
+.cardContent {
+  margin: 2.5px;
+  margin-top: 0;
+  padding: 5px;
+  border: 2px solid var(--colorAccent);
+  border-radius: 0 0 10px 10px;
+  background-color: var(--colorCardBackground);
+}
+
+#cardBody {
+  margin: 5px;
+  border: 2px solid var(--colorAccent);
+  border-radius: 10px;
+}
+
+#cardDrinkName {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: var(--colorAccent);
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+#cardDrinkImg {
+  margin: 5px;
+}
+
+#cardDrinkImg img {
+  border: 2px solid var(--colorAccent);
+  border-radius: 20px;
+}
+
+#cardGoogleMapsApi {
+  margin: 2.5px;
+  margin-top: 0;
 }
 
 /* modal stuff down here, no touchy cass */
+
 #cocktailForm {
   display: flex;
   flex-direction: column;
@@ -93,27 +117,17 @@ footer .row {
 #zipCodeInput {
   width: 50%;
   margin-left: 10px;
+  padding-left: 20px;
+  border-radius: 10px;
+  color: var(--colorText);
+  background-color: var(--colorCardBackground);
 }
 .card.small {
-  background-color: var(--blueGrayLight3);
+  background-color: var(--colorAccent);
   height: 475px;
   width: 400px;
 }
 .flow-text {
   font-weight: bold;
   margin: 10px;
-}
-
-/* --blueGrayLight3: #b0bec5;
-  --blueGrayLight4: #cfd8dc; */
-#header {
-  background-color: var(--blueGrayLight3);
-}
-
-#drinkNameContainer {
-  background-color: var(--blueGrayLight4);
-}
-
-.btn {
-  background-color: var(--blueGrayLight5);
 }
