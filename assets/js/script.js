@@ -65,16 +65,13 @@ const displayCocktail = (data) => {
   // Dnyamically Update Ingredients
   for (let i = 1; i <= 15; i++) {
     const ingredient = cocktail[`strIngredient${i}`];
-    const measure = cocktail[`strMeasure${i}`];
-    if (measure === null) {
-      measure = '';
-    }
+    let measure = cocktail[`strMeasure${i}`] || '';
+
     if (ingredient) {
-      console.log('Ingredient:', measure + ingredient);
-      $('#drinkIngredients').append(`<li>${measure} ${ingredient}</li>`);
+        console.log('Ingredient:', measure + ingredient);
+        $('#drinkIngredients').append(`<li>${measure} ${ingredient}</li>`);
     }
-  }
-};
+}}
 
 // Process Coctail Search Form
 const handleSearchByName = async (event) => {
