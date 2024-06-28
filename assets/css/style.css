@@ -6,6 +6,8 @@
   --colorCardBackground: rgb(248, 212, 226);
   --colorAccent: rgb(236, 56, 122);
   --colorButton: rgb(255, 89, 150);
+
+  --logo: url('../images/mixicon.png');
 }
 
 body {
@@ -27,6 +29,10 @@ header {
 
 header h3 {
   padding: 0 10px;
+}
+
+.imgLogo {
+  content: var(--logo);
 }
 
 #btnRandom {
@@ -110,11 +116,14 @@ header h3 {
 }
 
 /* style for map. */
+
 #map {
-  height: 350px;
+  min-height: 100%;
   width: 100%;
   margin-top: 20px;
+  border-radius: 10px;
 }
+
 #zipCodeInput {
   width: 50%;
   margin-left: 10px;
@@ -123,11 +132,13 @@ header h3 {
   color: var(--colorText);
   background-color: var(--colorCardBackground);
 }
+
 .card.small {
   background-color: var(--colorAccent);
-  height: 475px;
-  width: 400px;
+  margin-right: 1px;
+  border: 2px solid var(--colorAccent);
 }
+
 .flow-text {
   font-weight: bold;
   margin: 10px;
