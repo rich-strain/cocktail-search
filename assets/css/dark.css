@@ -1,0 +1,10 @@
+/* Dark Mode */
+:root[theme='dark'] {
+  --colorText: rgb(255, 255, 255);
+  --colorBackground: rgb(26, 30, 30);
+  --colorCardBackground: rgb(33, 44, 44);
+  --colorAccent: rgb(10, 80, 80);
+  --colorButton: rgb(12, 120, 120);
+
+  --logo: url('../images/mixicon-dark.png');
+}

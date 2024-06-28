@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrinkMix!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/css/materialize.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/dark.css" />
+  </head>
+  <body>
+
+<!-- header section; logo, navbar, light/dark theme button -->
+
+    <header class="valign-wrapper">
+      <h3>M<img class="imgLogo" height="30px" />xIt!</h3>
+      <button class="btn z-depth-2 modal-trigger" id="btnModal" data-target="modal1">Get a Drink!</button>
+      <button class="btn-floating z-depth-2" id="btnTheme">
+        <a href="#" id="theme-switch">
+          <i class="material-icons center">dark_mode</i>
+        </a>
+      </button>
+      <button class="btn-floating z-depth-2" id="btnRandom">
+        <a href="#" id="randomButton">
+          <i class="material-icons center">refresh</i>
+        </a>
+      </button>
+    </header>
+
+<!-- end header section -->
+
+    <!-- modal starts here -->
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <h5 class="text-center">Pick Your Poison</h5>
+          <form id="cocktailForm" method="POST">
+            <div class="input-field">
+              <input name="cocktailName" id="cocktailInput" type="text" class="validate" />
+              <label for="cocktailInput">Cocktail Name</label>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn" id="searchCocktail">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- anchor tag will close modal but we will also have code in script.js to close the modal after the form is submitted -->
+          <a href="#!" class="modal-close waves-effect btn-flat">CLOSE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal ends here -->
+
+<!-- main info card begins here -->
+
+<main id="cardBody">
+  <!-- first row holds the card header and drink name -->
+  <div class="row">
+      <div class="col s12" id="cardDrinkName">
+          Drink Name Title Bar
+      </div>
+  </div>
+
+  <!-- second row holds three columns: drink image and instructions, ingredients, and the GoogleMaps API, respectively -->
+  <div class="row">
+      <!-- we divide this column into three rows: drink image, a header for the instruction card, and the content of the instruction card, respectively -->
+      <div class="col s6 m4">
+
+          <div class="row">
+              <div class="col s12 center-align" id="cardDrinkImg">
+                  <img src="./assets/images/istockphoto-1160619894-612x612.jpg" alt="drink preview" class="responsive-img" id="drinkImg" />
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col s12 cardHeader">
+                  Instructions
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col s12 cardContent" id="drinkInstructions">
+                  Instructions Content
+              </div>
+          </div>
+
+      </div>
+
+      <!-- using the established format, we divide this column into two rows: the header for the ingredients list, and the ingredient list itself, respectively -->
+      <div class="col s6 m3">
+
+          <div class="row">
+              <div class="col s12 cardHeader">
+                  Ingredients
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col s12 cardContent">
+                  <ul class="" id="drinkIngredients">
+                      <li class="">1 1/2oz Tequila</li>
+                      <li class="">1oz Triple Sec</li>
+                      <li class="">Squeeze of Lime</li>
+                      <li class="">Rock Salt</li>
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+
+      <!-- finally, this third column just holds the GoogleMaps API; it's formatted to go alongside the other two columns on larger displays, but shift underneath them in smaller formats such as mobile and smaller tablets -->
+      <div class="col s12 m5 center-align" id="cardGoogleMapsApi">
+          <div class="card small m4">
+              <p class="flow-text">Find Local Liquor Stores</p>
+              <input type="text" id="zipCodeInput" placeholder="Enter your zip code">
+              <button class="btn z-depth-2" onclick="searchLocation()">Search</button>
+              <div id="map"></div>
+          </div>
+      </div>
+
+  </div>
+
+</main>
+
+<!-- main info card ends here -->
+
+    <!-- scripts begin loading here -->
+     
+    <script 
+      src="https://code.jquery.com/jquery-3.7.0.js">
+    </script>
+
+    <script 
+      src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.1.0/dist/js/materialize.js">
+    </script>
+
+    <script 
+      src="./assets/js/script.js">
+    </script>
+
+    <script 
+      src="./assets/js/light-dark.js">
+    </script>
+
+    <!-- Asynchronously load Google Maps API with key and libraries -->
+    <script 
+      async 
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ash3Z-sXJ0ghwEjyDK7fafIwoLoJDDE&libraries=places&callback=initMap">
+    </script>
+
+    <script>
+      const theme = localStorage.getItem('theme');
+      console.log(`Page Loaded - Current Theme Is: ${theme}`);
+      if (theme) document.documentElement.setAttribute('theme', theme);
+    </script>
+
+<!-- end script load -->
+
+  </body>
+</html>

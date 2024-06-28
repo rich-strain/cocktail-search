@@ -1,0 +1,153 @@
+/* declaring variables and universals */
+
+:root {
+  --colorBackground: rgb(241, 225, 231);
+  --colorText: rgb(33, 44, 44);
+  --colorCardBackground: rgb(248, 212, 226);
+  --colorAccent: rgb(236, 56, 122);
+  --colorButton: rgb(255, 89, 150);
+
+  --logo: url('../images/mixicon.png');
+}
+
+body {
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+}
+
+button {
+  background-color: var(--colorButton);
+}
+
+/* this section deals with the style for the header */
+
+header {
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--colorCardBackground);
+}
+
+header h3 {
+  padding: 0 5px 0 10px;
+}
+
+.imgLogo {
+  content: var(--logo);
+}
+
+#btnModal {
+  position: relative;
+  top: 5px;
+}
+
+#btnRandom {
+  top: 5px;
+  left: 5px;
+  background-color: var(--colorButton);
+}
+
+#btnTheme {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  background-color: var(--colorButton);
+}
+
+/* gap override for Materialize, otherwise the style breaks on narrower display widths for some reason */
+
+.row {
+  gap: 0;
+}
+
+/* this section deals with the style for the main card of the page */
+
+.cardHeader {
+  margin: 0 2.5px;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--colorAccent);
+  text-align: center;
+  font-size: 24px;
+}
+
+.cardContent {
+  margin: 2.5px;
+  margin-top: 0;
+  padding: 5px;
+  border: 2px solid var(--colorAccent);
+  border-radius: 0 0 10px 10px;
+  background-color: var(--colorCardBackground);
+}
+
+#cardBody {
+  margin: 5px;
+  border: 2px solid var(--colorAccent);
+  border-radius: 10px;
+}
+
+#cardDrinkName {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: var(--colorAccent);
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+#cardDrinkImg {
+  margin: 5px;
+}
+
+#cardDrinkImg img {
+  border: 2px solid var(--colorAccent);
+  border-radius: 20px;
+}
+
+#cardGoogleMapsApi {
+  margin: 2.5px;
+  margin-top: 0;
+}
+
+/* modal stuff down here, no touchy cass */
+
+#cocktailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#modal1 h5 {
+  text-align: center;
+}
+#modal1 {
+  max-width: 400px;
+}
+
+/* style for map. */
+
+#map {
+  min-height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#zipCodeInput {
+  width: 50%;
+  margin-left: 10px;
+  padding-left: 20px;
+  border-radius: 10px;
+  color: var(--colorText);
+  background-color: var(--colorCardBackground);
+}
+
+.card.small {
+  min-height: 100%;
+  background-color: var(--colorAccent);
+  margin-right: 1px;
+  border: 2px solid var(--colorAccent);
+}
+
+.flow-text {
+  font-weight: bold;
+  margin: 10px;
+}
