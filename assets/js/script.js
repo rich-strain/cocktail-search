@@ -162,7 +162,7 @@ function initMap() {
   infowindow = new google.maps.InfoWindow();
 }
 
-//  function to find liquor stores by zip code.
+// Function to find liquor stores by zip code
 function searchLocation() {
   var zipCode = document.getElementById('zipCodeInput').value.trim();
 
@@ -179,7 +179,8 @@ function searchLocation() {
         radius: 10000, // 10 kilometers
         type: 'liquor_store',
       };
-      // create marker for liquor stores.
+
+      // Create marker for liquor stores
       service.nearbySearch(request, function (results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
@@ -203,6 +204,6 @@ function createMarker(place) {
 
   google.maps.event.addListener(marker, 'click', function () {
     infowindow.setContent('<strong>' + place.name + '</strong><br>' + place.vicinity);
-    infowindow.open(map, this);
+    infowindow.open(map, marker);
   });
 }
